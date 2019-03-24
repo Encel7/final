@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS souvenir (
 CREATE TABLE IF NOT EXISTS souvenir_order (
   order_id MEDIUMINT NOT NULL,
   souvenir_id MEDIUMINT NOT NULL,
-  PRIMARY KEY (order_id,tattoo_id),
+  PRIMARY KEY (order_id,souvenir_id),
   FOREIGN KEY (order_id) REFERENCES user_order (id),
   FOREIGN KEY (souvenir_id) REFERENCES souvenir (id)
 ) ENGINE=INNODB DEFAULT CHARACTER SET utf8;

@@ -1,4 +1,4 @@
 CREATE DATABASE IF NOT EXISTS salon_db DEFAULT CHARACTER SET utf8;
 
 GRANT SELECT,INSERT,UPDATE,DELETE
-ON salon_db.*TO root@localhost
+ON salon_db.*TO root7@localhost

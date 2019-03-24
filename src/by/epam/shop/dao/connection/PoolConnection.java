@@ -12,9 +12,9 @@ import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class PoolConnection {
-    private static final String USER_NAME = "root";
-    private static final String USER_PASSWORD = "1234qwer";
-    private static final String CONNECTION_URL = "jdbc:mysql://localhost:3306/salon_db?serverTimezone=Europe/Moscow&useSSL=false";
+    private static final String USER_NAME = "root7";
+    private static final String USER_PASSWORD = "root";
+    private static final String CONNECTION_URL = "jdbc:mysql://localhost:3306/salon_db?allowPublicKeyRetrieval=true&serverTimezone=Europe/Moscow&useSSL=false";
     private static final String DB_DRIVER = "com.mysql.jdbc.Driver";
     private int maxSize;
     private int checkConnectionTimeout;

@@ -19,6 +19,7 @@ public class ActionFilter implements Filter {
         actions.put("/edit_user", "edit_user");
         actions.put("/add_to_order", "add_to_order");
         actions.put("/replenish_balance", "replenish_balance");
+        actions.put("/add_souvenir", "add_souvenir");
         actions.put("/registration", "registration");
         actions.put("/log_in", "log_in");
         actions.put("/log_out", "log_out");
