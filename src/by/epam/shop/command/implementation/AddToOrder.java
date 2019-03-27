@@ -43,7 +43,7 @@ public class AddToOrder implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         CommandCommon common = new CommandCommon();
         OrderService orderService = new OrderServiceImplementation();
-        Integer tattooID = Integer.valueOf(request.getParameter("id"));
+        Integer souvenirID = Integer.valueOf(request.getParameter("id"));
         BalanceService balanceService = new BalanceServiceImplementation();
         try {
             Balance balance = balanceService.searchByOwner(((User)request.getSession().
@@ -59,7 +59,7 @@ public class AddToOrder implements Command {
                 Order order = orderService.searchActiveOrder(((User) request.
                         getSession().getAttribute("User")).getIdentity());
                 request.getSession().setAttribute("Order", order);
-                orderService.addSouvenirOrder(order.getIdentity(), tattooID);
+                orderService.addSouvenirOrder(order.getIdentity(), souvenirID);
                 request.setAttribute("start", request.getParameter("start"));
                 request.setAttribute("index", null);
                 request.setAttribute("command", "main_page");

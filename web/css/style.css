@@ -52,13 +52,13 @@ div.ex2 {
 .searchbar:hover > .search_input{
     padding: 0 10px;
     width: 450px;
-    caret-color:red;
+    caret-color: #ff006d;
     transition: width 0.4s linear;
 }
 
 .searchbar:hover > .search_icon{
     background: white;
-    color: #e74c3c;
+    color: #e70034;
 }
 
 .search_icon{
@@ -69,5 +69,5 @@ div.ex2 {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color:white;
+    color: #ffffff;
 }

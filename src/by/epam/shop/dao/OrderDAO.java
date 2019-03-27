@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface OrderDAO extends DAOBase<Order> {
 
-    List<Souvenir> findAllSouvenir(Integer orderID) throws ConstantException;
+    List<Souvenir> findAllSouvenirs(Integer orderID) throws ConstantException;
 
     Integer countTotalPrice (Integer orderID) throws ConstantException;
 

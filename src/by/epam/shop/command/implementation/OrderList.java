@@ -38,7 +38,7 @@ public class OrderList implements Command {
         try {
             Integer sum = orderService.calculateTotalPrice(((Order) request.
                     getSession().getAttribute("Order")).getIdentity());
-            List<Souvenir> order = orderService.takeAllSouvenir(((Order)request.
+            List<Souvenir> order = orderService.takeAllSouvenirs(((Order)request.
                     getSession().getAttribute("Order")).getIdentity());
             request.setAttribute("order", order);
             User user = (User) request.getSession().getAttribute("User");

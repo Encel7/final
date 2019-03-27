@@ -10,101 +10,101 @@ import java.util.List;
 
 public class SouvenirServiceImplementation implements SouvenirService {
     @Override
-    public List<Souvenir> takeAllSouvenir() throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+    public List<Souvenir> takeAllSouvenirs() throws SQLException, ConstantException {
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            return tattooDao.findAllTattoo();
+            souvenirDao.setConnection();
+            return souvenirDao.findAllSouvenir();
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public List<Souvenir> searchSmallerThan(Integer maxSize) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            return tattooDao.findSmallerThan(maxSize);
+            souvenirDao.setConnection();
+            return souvenirDao.findSmallerThan(maxSize);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public List<Souvenir> searchCheaperThan(Integer maxPrice) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            return tattooDao.cheaperThan(maxPrice);
+            souvenirDao.setConnection();
+            return souvenirDao.cheaperThan(maxPrice);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public List<Souvenir> searchByColor(String color) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            return tattooDao.findByColor(color);
+            souvenirDao.setConnection();
+            return souvenirDao.findByColor(color);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public List<Souvenir> searchByAuthor(Integer authorID) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            return tattooDao.findByAuthor(authorID);
+            souvenirDao.setConnection();
+            return souvenirDao.findByAuthor(authorID);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public Souvenir searchByID(Integer identity) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            return tattooDao.findByID(identity);
+            souvenirDao.setConnection();
+            return souvenirDao.findByID(identity);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public Integer addSouvenir(Souvenir souvenir) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            return tattooDao.create(souvenir);
+            souvenirDao.setConnection();
+            return souvenirDao.create(souvenir);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public void setDate(Souvenir souvenir) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            tattooDao.update(souvenir);
+            souvenirDao.setConnection();
+            souvenirDao.update(souvenir);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 
     @Override
     public void deleteByID(Integer identity) throws SQLException, ConstantException {
-        SouvenirDAOImplementation tattooDao = new SouvenirDAOImplementation();
+        SouvenirDAOImplementation souvenirDao = new SouvenirDAOImplementation();
         try {
-            tattooDao.setConnection();
-            tattooDao.delete(identity);
+            souvenirDao.setConnection();
+            souvenirDao.delete(identity);
         } finally {
-            tattooDao.closeConnection();
+            souvenirDao.closeConnection();
         }
     }
 }

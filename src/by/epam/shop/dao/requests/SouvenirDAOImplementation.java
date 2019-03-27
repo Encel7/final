@@ -22,7 +22,7 @@ public class SouvenirDAOImplementation extends BaseImplementation implements Sou
     }
 
     @Override
-    public List<Souvenir> findAllTattoo() throws ConstantException {
+    public List<Souvenir> findAllSouvenir() throws ConstantException {
         String sql = "SELECT id, size, color, image, price, author_id FROM souvenir";
         PreparedStatement statement = null;
         ResultSet resultSet = null;

@@ -64,7 +64,7 @@ public class MainPage implements Command {
         List<Souvenir> souvenirList;
         try {
             if (request.getAttribute("search") == null) {
-                souvenirList = souvenirService.takeAllSouvenir();
+                souvenirList = souvenirService.takeAllSouvenirs();
             } else {
                 souvenirList = (List<Souvenir>) request.getAttribute("search");
                 startIndex = 0.0;

@@ -29,8 +29,8 @@ public class OrderDAOImplementation extends BaseImplementation implements OrderD
     }
 
     @Override
-    public List<Souvenir> findAllSouvenir(Integer orderID) throws ConstantException {
-        String sql = "SELECT tattoo_id FROM tattoo_order WHERE order_id=?";
+    public List<Souvenir> findAllSouvenirs(Integer orderID) throws ConstantException {
+        String sql = "SELECT souvenir_id FROM souvenir_order WHERE order_id=?";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         SouvenirService souvenirService = new SouvenirServiceImplementation();
@@ -41,7 +41,7 @@ public class OrderDAOImplementation extends BaseImplementation implements OrderD
             statement.setInt(1, orderID);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                integers.add(resultSet.getInt("tattoo_id"));
+                integers.add(resultSet.getInt("souvenir_id"));
             }
 
             for (Integer i : integers) {
@@ -87,7 +87,7 @@ public class OrderDAOImplementation extends BaseImplementation implements OrderD
     }
 
     @Override
-    public Integer addSouvenir(Integer orderID, Integer tattooID) throws ConstantException {
+    public Integer addSouvenir(Integer orderID, Integer souvenirID) throws ConstantException {
 
         String sql = "INSERT INTO souvenir_order (order_id, souvenir_id) VALUES (?,?)";
         PreparedStatement statement = null;
@@ -95,7 +95,7 @@ public class OrderDAOImplementation extends BaseImplementation implements OrderD
         try {
             statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, orderID);
-            statement.setInt(2, tattooID);
+            statement.setInt(2, souvenirID);
             statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -154,13 +154,13 @@ public class OrderDAOImplementation extends BaseImplementation implements OrderD
     }
 
     @Override
-    public void deleteSouvenir(Integer orderID, Integer tattooID) throws ConstantException {
+    public void deleteSouvenir(Integer orderID, Integer souvenirID) throws ConstantException {
         String sql = "DELETE FROM souvenir_order WHERE order_id=? AND souvenir_id=?";
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(sql);
             statement.setInt(1, orderID);
-            statement.setInt(2,tattooID);
+            statement.setInt(2,souvenirID);
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new ConstantException(e);

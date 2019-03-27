@@ -11,11 +11,11 @@ import java.util.List;
 
 public class OrderServiceImplementation implements OrderService {
     @Override
-    public List<Souvenir> takeAllSouvenir(Integer orderID) throws SQLException, ConstantException {
+    public List<Souvenir> takeAllSouvenirs(Integer orderID) throws SQLException, ConstantException {
         OrderDAOImplementation orderDAO = new OrderDAOImplementation();
         try {
             orderDAO.setConnection();
-            return orderDAO.findAllSouvenir(orderID);
+            return orderDAO.findAllSouvenirs(orderID);
         } finally {
             orderDAO.closeConnection();
         }
@@ -77,11 +77,11 @@ public class OrderServiceImplementation implements OrderService {
     }
 
     @Override
-    public Integer addSouvenirOrder(Integer orderID, Integer tattooID) throws SQLException, ConstantException {
+    public Integer addSouvenirOrder(Integer orderID, Integer souvenirID) throws SQLException, ConstantException {
         OrderDAOImplementation orderDAO = new OrderDAOImplementation();
         try {
             orderDAO.setConnection();
-            return orderDAO.addSouvenir(orderID, tattooID);
+            return orderDAO.addSouvenir(orderID, souvenirID);
         } finally {
             orderDAO.closeConnection();
         }
@@ -121,11 +121,11 @@ public class OrderServiceImplementation implements OrderService {
     }
 
     @Override
-    public void deleteSouvenir(Integer orderID, Integer tattooID) throws SQLException, ConstantException {
+    public void deleteSouvenir(Integer orderID, Integer souvenirID) throws SQLException, ConstantException {
         OrderDAOImplementation orderDAO = new OrderDAOImplementation();
         try {
             orderDAO.setConnection();
-            orderDAO.deleteSouvenir(orderID, tattooID);
+            orderDAO.deleteSouvenir(orderID, souvenirID);
         } finally {
             orderDAO.closeConnection();
         }

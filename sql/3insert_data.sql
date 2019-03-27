@@ -7,7 +7,10 @@ VALUES
 
 INSERT INTO souvenir (size, color, image, price, author_id)
 VALUES
-//
+(23, 'white', 'images/paris.jpg',150, 2),
+(23, 'white', 'images/ship.jpg',300, 2),
+(23, 'white', 'images/saintp.png',300,2),
+(23, 'grey', 'images/knife.jpg',250,2);
 
 INSERT INTO balance (user_id, current_balance, overdruft)
 VALUES

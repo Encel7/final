@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface SouvenirDAO extends DAOBase<Souvenir> {
 
-    List<Souvenir> findAllTattoo () throws ConstantException;
+    List<Souvenir> findAllSouvenir() throws ConstantException;
 
     List<Souvenir> findSmallerThan (Integer maxSize) throws ConstantException;
 

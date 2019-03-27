@@ -4,7 +4,7 @@
     position: relative;
 }
 .about h1{
-    color:#F97300;
+    color: #f99f3f;
     margin: 2em;
 }
 .about img{
@@ -14,16 +14,16 @@
 }
 .about span{
     display: block;
-    color: #888;
+    color: #888888;
     position: absolute;
     left: 115px;
 }
 .about .desc{
     padding: 2em;
-    border-left:4px solid #10828C;
+    border-left:4px solid #0e8a8c;
 }
 .about .desc h3{
-    color: #10828C;
+    color: #108c86;
 }
 .about .desc p{
     line-height:2;

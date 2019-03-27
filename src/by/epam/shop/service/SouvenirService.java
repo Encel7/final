@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface SouvenirService {
 
-    List<Souvenir> takeAllSouvenir() throws SQLException, ConstantException;
+    List<Souvenir> takeAllSouvenirs() throws SQLException, ConstantException;
 
     List<Souvenir> searchSmallerThan(Integer maxSize) throws SQLException, ConstantException;
 

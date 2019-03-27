@@ -1,15 +1,12 @@
-
 <%@ page isELIgnored="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <fmt:setLocale value="${locale}"/>
 <fmt:setBundle basename="by.epam.shop.text" var="locale"/>
 <html>
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,16 +14,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Salon</title>
+    <title>Order List</title>
 </head>
+<body background="images/bg.jpg">
 
 <c:if test="${fail != null}">
     <div class="alert alert-danger block1" role="alert">
             ${fail}
     </div>
 </c:if>
-
-<body background="images/bg.jpg">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a href="usermain.html" class="navbar-brand">
@@ -76,28 +72,30 @@
 
 </nav>
 
-<div class="bg">
-
-    <form method="post" action="log_in.html">
-        <div class="form-group">
-            <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-5"></div>
-                <div class="col-lg-2 col-md-2 col-sm-2 ex1" style="background-color: dimgrey">
-                    <label for="exampleInputLogin"><fmt:message bundle="${locale}" key="body.login"/></label>
-                    <input type="text" name="login" id="exampleInputLogin"
-                           class="form-control" placeholder="Login" required>
-                    <label for="exampleInputPassword"><fmt:message bundle="${locale}" key="body.password"/></label>
-                    <input type="password" name="password" id="exampleInputPassword"
-                           class="form-control" placeholder="Password" required>
-
-                    <button type="submit" class="btn btn-danger center-block"><fmt:message bundle="${locale}" key="body.singin"/></button>
-                    <h5 align=""><a style="color: darkred" href="registration.jsp"><fmt:message bundle="${locale}" key="body.registerhere"/></a></h5>
-                </div>
-            </div>
-        </div>
-    </form>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+    <div class="col-lg-4 col-md-4 col-sm-4 " style="background-color: dimgrey">
+        <ul class="list-group" style="background-color: gainsboro">
+            <c:forEach var="order" items="${order}">
+                <li class="list-group-item" style="background-color: gainsboro">
+                    <img src="${order.getImage()}" alt="" width="100" height="125"> ${order.getPrice()} <fmt:message bundle="${locale}" key="body.currency"/>
+                    <h3></h3>
+                    <form method="post" action="delete.html">
+                        <input type="hidden" name="id" value="${order.getIdentity()}">
+                        <button type="submit" class="btn btn-danger center-block"><fmt:message bundle="${locale}" key="body.deleteorder"/></button>
+                    </form>
+                </li>
+            </c:forEach>
+            <li class="list-group-item" style="background-color: gainsboro"><fmt:message bundle="${locale}" key="body.totalprice"/> ${sum}
+                <form method="post" action="checkout.html">
+                    <button type="submit" class="btn btn-danger center-block"><fmt:message bundle="${locale}" key="head.checkout"/></button>
+                </form>
+            </li>
+        </ul>
+    </div>
 </div>
-<script src="https://code.j query.com/jquery-3.3.1.slim.min.js"
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
@@ -106,5 +104,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
 </body>
 </html>

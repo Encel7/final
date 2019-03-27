@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface OrderService {
 
-    List<Souvenir> takeAllSouvenir(Integer orderID) throws SQLException, ConstantException;
+    List<Souvenir> takeAllSouvenirs(Integer orderID) throws SQLException, ConstantException;
 
     Integer calculateTotalPrice(Integer orderID) throws SQLException, ConstantException;
 
@@ -21,7 +21,7 @@ public interface OrderService {
 
     Integer addOrder(Order order) throws SQLException, ConstantException;
 
-    Integer addSouvenirOrder(Integer orderID, Integer tattooID) throws SQLException, ConstantException;
+    Integer addSouvenirOrder(Integer orderID, Integer souvenirID) throws SQLException, ConstantException;
 
     Order searchByID(Integer identity) throws SQLException, ConstantException;
 
@@ -29,5 +29,5 @@ public interface OrderService {
 
     void deleteByID(Integer identity) throws SQLException, ConstantException;
 
-    void deleteSouvenir(Integer orderID, Integer tattooID) throws SQLException, ConstantException;
+    void deleteSouvenir(Integer orderID, Integer souvenirID) throws SQLException, ConstantException;
 }

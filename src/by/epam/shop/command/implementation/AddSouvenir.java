@@ -54,7 +54,7 @@ public class AddSouvenir implements Command {
             byte[] bytes = new byte[fileContent.available()];
             fileContent.read(bytes);
             User user = (User) request.getSession().getAttribute("User");
-            File file = new File("" + fileName);
+            File file = new File("C:\\Users\\Lenovo\\IdeaProjects\\finaltask\\out\\artifacts\\finaltask_war_exploded\\userimg\\" + fileName);
             OutputStream outputStream = new FileOutputStream(file);
             outputStream.write(bytes);
             souvenirService.addSouvenir(new Souvenir(size,
